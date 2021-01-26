@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saludar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saludarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saludarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sumar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numero01" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numero02" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sumarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sumarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="aumentar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numero" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="aumentarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aumentarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="saludarSoapIn">
+    <wsdl:part name="parameters" element="tns:saludar" />
+  </wsdl:message>
+  <wsdl:message name="saludarSoapOut">
+    <wsdl:part name="parameters" element="tns:saludarResponse" />
+  </wsdl:message>
+  <wsdl:message name="sumarSoapIn">
+    <wsdl:part name="parameters" element="tns:sumar" />
+  </wsdl:message>
+  <wsdl:message name="sumarSoapOut">
+    <wsdl:part name="parameters" element="tns:sumarResponse" />
+  </wsdl:message>
+  <wsdl:message name="aumentarSoapIn">
+    <wsdl:part name="parameters" element="tns:aumentar" />
+  </wsdl:message>
+  <wsdl:message name="aumentarSoapOut">
+    <wsdl:part name="parameters" element="tns:aumentarResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="saludarHttpGetIn">
+    <wsdl:part name="nombre" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saludarHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="sumarHttpGetIn">
+    <wsdl:part name="numero01" type="s:string" />
+    <wsdl:part name="numero02" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sumarHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="aumentarHttpGetIn">
+    <wsdl:part name="numero" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="aumentarHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="saludarHttpPostIn">
+    <wsdl:part name="nombre" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saludarHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="sumarHttpPostIn">
+    <wsdl:part name="numero01" type="s:string" />
+    <wsdl:part name="numero02" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sumarHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="aumentarHttpPostIn">
+    <wsdl:part name="numero" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="aumentarHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="serviciosSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saludar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saludo a la Persona</wsdl:documentation>
+      <wsdl:input message="tns:saludarSoapIn" />
+      <wsdl:output message="tns:saludarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sumar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Suma de dos numeros</wsdl:documentation>
+      <wsdl:input message="tns:sumarSoapIn" />
+      <wsdl:output message="tns:sumarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="aumentar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aumentar el valor del Numero</wsdl:documentation>
+      <wsdl:input message="tns:aumentarSoapIn" />
+      <wsdl:output message="tns:aumentarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="serviciosHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saludar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saludo a la Persona</wsdl:documentation>
+      <wsdl:input message="tns:saludarHttpGetIn" />
+      <wsdl:output message="tns:saludarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sumar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Suma de dos numeros</wsdl:documentation>
+      <wsdl:input message="tns:sumarHttpGetIn" />
+      <wsdl:output message="tns:sumarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="aumentar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aumentar el valor del Numero</wsdl:documentation>
+      <wsdl:input message="tns:aumentarHttpGetIn" />
+      <wsdl:output message="tns:aumentarHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="serviciosHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saludar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saludo a la Persona</wsdl:documentation>
+      <wsdl:input message="tns:saludarHttpPostIn" />
+      <wsdl:output message="tns:saludarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sumar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Suma de dos numeros</wsdl:documentation>
+      <wsdl:input message="tns:sumarHttpPostIn" />
+      <wsdl:output message="tns:sumarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="aumentar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aumentar el valor del Numero</wsdl:documentation>
+      <wsdl:input message="tns:aumentarHttpPostIn" />
+      <wsdl:output message="tns:aumentarHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="serviciosSoap" type="tns:serviciosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saludar">
+      <soap:operation soapAction="http://tempuri.org/saludar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sumar">
+      <soap:operation soapAction="http://tempuri.org/sumar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aumentar">
+      <soap:operation soapAction="http://tempuri.org/aumentar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviciosSoap12" type="tns:serviciosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saludar">
+      <soap12:operation soapAction="http://tempuri.org/saludar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sumar">
+      <soap12:operation soapAction="http://tempuri.org/sumar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aumentar">
+      <soap12:operation soapAction="http://tempuri.org/aumentar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviciosHttpGet" type="tns:serviciosHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saludar">
+      <http:operation location="/saludar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sumar">
+      <http:operation location="/sumar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aumentar">
+      <http:operation location="/aumentar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviciosHttpPost" type="tns:serviciosHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saludar">
+      <http:operation location="/saludar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sumar">
+      <http:operation location="/sumar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aumentar">
+      <http:operation location="/aumentar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="servicios">
+    <wsdl:port name="serviciosSoap" binding="tns:serviciosSoap">
+      <soap:address location="http://william2020-001-site1.htempurl.com/servicios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviciosSoap12" binding="tns:serviciosSoap12">
+      <soap12:address location="http://william2020-001-site1.htempurl.com/servicios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviciosHttpGet" binding="tns:serviciosHttpGet">
+      <http:address location="http://william2020-001-site1.htempurl.com/servicios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviciosHttpPost" binding="tns:serviciosHttpPost">
+      <http:address location="http://william2020-001-site1.htempurl.com/servicios.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -31,7 +31,7 @@ namespace servicios
         {
             int resultado = 0;
             resultado = numero01 + numero02;
-            return "La suma es :" + resultado;
+            return "La suma es:" + resultado;
         }
         [WebMethod(Description = "Aumentar el valor del Numero")]
         public string aumentar(int numero)

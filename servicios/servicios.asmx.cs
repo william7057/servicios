@@ -24,7 +24,7 @@ namespace servicios
         [WebMethod(Description ="Saludo a la Persona")]
         public string saludar(string nombre)
         {
-            return "Hola :"+nombre;
+            return "Hola : "+nombre;
         }
         [WebMethod(Description = "Suma de dos numeros")]
         public string sumar(int numero01, int numero02)
